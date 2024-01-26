@@ -10,6 +10,7 @@
     pkgs.iotop
     pkgs.jq
     pkgs.lsof
+    pkgs.nmap
     pkgs.pciutils
     pkgs.pixz
     pkgs.poetry
@@ -24,6 +25,7 @@
     pkgs.usbutils
     pkgs.vim-full
     pkgs.wget
+    pkgs.whois
     pkgs.xz
     pkgs.zip
   ];
