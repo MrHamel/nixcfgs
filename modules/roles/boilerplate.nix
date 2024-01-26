@@ -17,6 +17,8 @@
     generateNixPathFromInputs = true;
     generateRegistryFromInputs = true;
     linkInputs = true;
+    optimise.automatic = true;
+    optimise.dates = [ "03:45" ];
     settings.experimental-features = [ "nix-command" "flakes" ];
   };
 
