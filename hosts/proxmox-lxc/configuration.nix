@@ -1,9 +1,8 @@
-{ config, pkgs, inputs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 {
   imports = with inputs.self.nixosModules;
     [
-      <nixpkgs/nixos/modules/virtualisation/lxc-container.nix>
       ./hardware-configuration.nix
       groups-workstation
       ../../modules/roles/ntp/lax.nix
@@ -18,12 +17,6 @@
 
   environment.noXlibs = false;
 
-  # Install new init script
-  system.activationScripts.installInitScript = lib.mkForce ''
-    mkdir -p /sbin
-    ln -fs $systemConfig/init /sbin/init
-  '';
-
   swapDevices = [ ];
 
   networking = {
@@ -36,6 +29,13 @@
 
     wireless.enable = false;
   };
+
+  services.chrony.enable = lib.mkForce false;
+
+  systemd.mounts = [{
+    where = "/sys/kernel/debug";
+    enable = false;
+  }];
 
   systemd.services.zfs-mount.enable = false;
 }
