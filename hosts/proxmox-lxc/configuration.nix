@@ -3,6 +3,7 @@
 {
   imports = with inputs.self.nixosModules;
     [
+      <nixpkgs/nixos/modules/virtualisation/lxc-container.nix>
       ./hardware-configuration.nix
       groups-workstation
       ../../modules/roles/ntp/lax.nix

@@ -61,7 +61,6 @@
           system = "x86_64-linux";
           modules = [
             ./hosts/proxmox-lxc/configuration.nix
-            <nixpkgs/nixos/modules/virtualisation/lxc-container.nix>
             agenix.nixosModules.age
             home-manager.nixosModules.home-manager
             nixos-generators.nixosModules.all-formats
