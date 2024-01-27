@@ -24,19 +24,33 @@
     hostName = "Proxmox-LXC";
     hostId = "79196719";
 
-    #interfaces.enp4s0.useDHCP =  true;
-
-    networkmanager.enable = true;
-
+    useDHCP = lib.mkForce false;
     wireless.enable = false;
   };
 
   services.chrony.enable = lib.mkForce false;
+  services.resolved.enable = false;
 
   systemd.mounts = [{
     where = "/sys/kernel/debug";
     enable = false;
   }];
+
+  systemd.network.enable = true;
+
+  systemd.network.networks."10-WAN" = {
+    # match the interface by name
+    matchConfig.Name = "eth0";
+    address = [
+        # configure addresses including subnet mask
+        "173.254.236.54/29"
+    ];
+    routes = [
+      { routeConfig.Gateway = "173.254.236.49"; }
+    ];
+    # make the routes on this interface a dependency for network-online.target
+    linkConfig.RequiredForOnline = "no";
+  };
 
   systemd.services.zfs-mount.enable = false;
 }
