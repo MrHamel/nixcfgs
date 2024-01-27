@@ -1,0 +1,9 @@
+= NixOS Flake Repo
+
+Greetings! This git repo contains a https://nixos.wiki/wiki/Flakes[NixOS flake] for the few systems I am tinkering around with. Hosts and modules will change over time, meaning it is best to not clone this repo and use it as-is, you will not be able to login to it anyway.
+
+I will eventually integrate https://github.com/nix-community/disko[disko] to automate system partitioning, that way it is not as tedious to rebuild a system from scratch.
+
+=== Feedback
+
+If you have any questions, please reach out to me on my https://ryanhamel.com/social[various social media accounts], or https://github.com/MrHamel/nixcfgs/issues[raise an issue].
