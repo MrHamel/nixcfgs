@@ -44,4 +44,10 @@
 
     wireless.enable = false;
   };
+
+  programs.zsh = { 
+    shellAliases = {
+      "update" = lib.mkForce "doas nixos-rebuild switch --upgrade-all --impure --flake /etc/nixos#hp";
+    };
+  };
 }
