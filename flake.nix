@@ -57,6 +57,17 @@
           ];
           specialArgs = { inherit inputs; };
         };
+        proxmox_lxc = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            ./hosts/proxmox-lxc/configuration.nix
+            agenix.nixosModules.age
+            home-manager.nixosModules.home-manager
+            nixos-generators.nixosModules.all-formats
+            utils.nixosModules.autoGenFromInputs
+          ];
+          specialArgs = { inherit inputs; };
+        };
       };
     };
 }
