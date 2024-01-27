@@ -28,6 +28,12 @@
     wireless.enable = false;
   };
 
+  programs.zsh = { 
+    shellAliases = {
+      "update" = lib.mkForce "doas nixos-rebuild switch --impure --flake /etc/nixos#proxmox_lxc";
+    };
+  };
+
   services.chrony.enable = lib.mkForce false;
   services.resolved.enable = false;
 
@@ -52,5 +58,7 @@
     linkConfig.RequiredForOnline = "no";
   };
 
+  systemd.services.NetworkManager-wait-online.enable = false;
+  systemd.services.systemd-networkd-wait-online.enable = lib.mkForce false;
   systemd.services.zfs-mount.enable = false;
 }

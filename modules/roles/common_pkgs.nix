@@ -10,6 +10,7 @@
     pkgs.iotop
     pkgs.jq
     pkgs.lsof
+    pkgs.man
     pkgs.nmap
     pkgs.pciutils
     pkgs.pixz
