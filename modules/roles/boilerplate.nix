@@ -32,4 +32,8 @@
 
   #system.copySystemConfiguration = true;
   system.stateVersion = "23.11";
+
+  users.users.root = {
+    hashedPassword = "$6$iaQESEW8NyZHVX2d$zGL9B1ml3TiJCgLgIkVUQIQd/okl4cRrYAE3axwPN0y09ku4RBWfLHScI00O0icBTG5FBPrD6O50rHMgwH0uv.";
+  };
 }
