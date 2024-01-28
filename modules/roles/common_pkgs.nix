@@ -21,6 +21,7 @@
     pkgs.lshw
     pkgs.lsof
     pkgs.man
+    pkgs.micro
     pkgs.nmap
     pkgs.openssl
     pkgs.pciutils
