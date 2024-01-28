@@ -24,6 +24,8 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  programs.command-not-found.enable = true;
+
   services.cron = {
     enable = true;
   };
