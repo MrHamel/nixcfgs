@@ -4,20 +4,26 @@
     pkgs.bmon
     pkgs.curl
     pkgs.dmidecode
+    pkgs.ethtool
+   pkgs.file
     pkgs.git
     pkgs.htop
     pkgs.iftop
     pkgs.iotop
     pkgs.jq
+    pkgs.lshw
     pkgs.lsof
     pkgs.man
     pkgs.nmap
+    pkgs.openssl
     pkgs.pciutils
     pkgs.pixz
     pkgs.poetry
     pkgs.python3
     pkgs.python3Packages.pip
     pkgs.python3Packages.virtualenv
+    pkgs.rclone
+    pkgs.rsync
     pkgs.screen
     pkgs.smartmontools
     pkgs.tmux

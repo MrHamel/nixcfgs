@@ -24,6 +24,10 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  services.cron = {
+    enable = true;
+  };
+
   #system.copySystemConfiguration = true;
   system.stateVersion = "23.11";
 }
