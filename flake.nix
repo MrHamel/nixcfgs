@@ -75,7 +75,7 @@
             <nixpkgs/nixos/modules/installer/netboot/netboot-minimal.nix>
             agenix.nixosModules.age
             home-manager.nixosModules.home-manager
-            nixos-generators.nixosModules.all-formats
+            #nixos-generators.nixosModules.all-formats
             utils.nixosModules.autoGenFromInputs
           ];
           specialArgs = { inherit inputs; };

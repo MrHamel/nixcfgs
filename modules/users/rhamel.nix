@@ -3,6 +3,11 @@ let
 in
 {
   nix.settings.trusted-users = [ "rhamel" ];
+
+  security.doas.extraRules = [
+    { users = [ "rhamel" ]; keepEnv = true; }
+  ];
+
   users.users.rhamel = {
     extraGroups = [
       "wheel"
