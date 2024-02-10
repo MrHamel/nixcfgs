@@ -8,6 +8,7 @@
       roles-lldp
       roles-sshd
       roles-sudo
+      roles-tmux
       roles-zfs
       roles-zsh
       users-rhamel

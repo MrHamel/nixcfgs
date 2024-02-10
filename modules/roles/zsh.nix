@@ -12,8 +12,15 @@
 
   programs.zsh = { 
     enable = true;
-    histSize = 10000;
+    histSize = 999999;
     interactiveShellInit = ''
+
+
+export ZSH_TMUX_AUTOSTART=true
+export ZSH_TMUX_AUTOSTART_ONCE=false
+export ZSH_TMUX_AUTOCONNECT=false
+export ZSH_TMUX_AUTOQUIT=true
+
 OSNAME=`uname`
 EDPREF="nano" # preferred editor binary
 BAR20="--------------------"

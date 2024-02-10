@@ -7,6 +7,10 @@
     stateVersion = "23.11";
   };
 
+  imports = [
+    ./tmux.nix
+  ];
+
   programs = {
     git = {
       enable = true;
