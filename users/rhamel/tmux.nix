@@ -31,33 +31,29 @@ bind C-v run "tmux set-buffer $(xclip -o -sel clip); tmux paste-buffer"
 
 # General stuff
 setw -g xterm-keys on
-set -s escape-time 10                     # faster command sequences
 set -sg repeat-time 600                   # increase repeat timeout
 set -s focus-events on
 set -g renumber-windows on
 
 set -g set-titles on          # set terminal title
 
-set -g display-panes-time 800 # slightly longer pane indicators display time
-set -g display-time 1000      # slightly longer status messages display time
+#set -g display-panes-time 800 # slightly longer pane indicators display time
+#set -g display-time 1000      # slightly longer status messages display time
 
 set -g status-interval 10     # redraw status line every 10 seconds
 
 # activity
 set -g monitor-activity on
-set -g visual-activity off
+set -g visual-activity on
 
-set -g status-right '#[fg=black,bg=color15] #{cpu_percentage}  %H:%M '
-run-shell ${pkgs.tmuxPlugins.cpu}/share/tmux-plugins/cpu/cpu.tmux
+set -g status-right-length 200
+set -g status-right "#{sysstat_cpu} | #{sysstat_mem} | #{sysstat_swap} | #{sysstat_loadavg} | #(echo $USER)@#H | %Y-%m-%d %H:%M #{tmux_mode_indicator}"
     '';
     historyLimit = 9999999;
     plugins = [
       pkgs.tmuxPlugins.better-mouse-mode
-      pkgs.tmuxPlugins.copy-toolkit
-      pkgs.tmuxPlugins.cpu
       pkgs.tmuxPlugins.mode-indicator
       pkgs.tmuxPlugins.resurrect
-      pkgs.tmuxPlugins.sidebar
       pkgs.tmuxPlugins.sysstat
     ];
   };
