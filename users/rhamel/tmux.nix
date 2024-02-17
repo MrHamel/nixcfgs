@@ -10,6 +10,9 @@ bind v split-window -v
 unbind '"'
 unbind %
 
+# Create new session with CTRL-E
+bind e new-session
+
 # reload config file (change file location to your the tmux.conf you want to use)
 #bind r source-file /etc/tmux.conf
 
